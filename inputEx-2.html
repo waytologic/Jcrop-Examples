@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+   	input{
+   	    margin: 8px;
+   	}
+   </style>
+</head>
+<body>
+	<h2>Add input on button click:</h2>
+	<div id='input-cont'>
+        <!--Input container-->
+    </div>
+    <button onclick='addInput()'>+Add input</button>
+    
+    <script>
+        const container = document.getElementById('input-cont');
+
+        // Call addInput() function on button click
+        function addInput(){
+            let input = document.createElement('input');
+            input.placeholder = 'Type something';
+            container.appendChild(input);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+   	input{
+   	    margin: 8px;
+   	}
+   </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
+</head>
+<body>
+	<input type="text">
+<button class="add">Add</button>
+<button class="remove">remove</button>
+<div id="new_chq"></div>
+<input type="hidden" value="1" id="total_chq">
+
+    
+    <script>
+           $('.add').on('click', add);
+    $('.remove').on('click', remove);
+
+function add() {
+  var new_chq_no = parseInt($('#total_chq').val()) + 1;
+  var new_input = "<input type='text' id='new_" + new_chq_no + "'>";
+
+  $('#new_chq').append(new_input);
+  
+  $('#total_chq').val(new_chq_no);
+}
+
+function remove() {
+  var last_chq_no = $('#total_chq').val();
+
+  if (last_chq_no > 1) {
+    $('#new_' + last_chq_no).remove();
+    $('#total_chq').val(last_chq_no - 1);
+  }
+}
+
+    </script>
+</body>
+</html>

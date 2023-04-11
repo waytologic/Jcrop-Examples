@@ -1,0 +1,82 @@
+<html lang="en">  
+<head>  
+  <title> Example of Add More Field using the Bootstrap and Jquery </title>  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
+  <link href="https://fonts.cdnfonts.com/css/team-work" rel="stylesheet">
+  <style>
+  .teamworkIcon {
+    font-family: 'TeamworkRegular' !important;
+    color: #34495e;
+    font-weight: normal;
+    font-size: 120%;
+    font-style: normal !important;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+
+    .teamworkIcon:hover {
+        opacity: .8
+    }
+
+    .teamworkIcon.withLabel {
+        padding-right: 5px;
+    }
+
+.button:hover .teamworkIcon {
+    opacity: 0.8
+}
+  </style>
+</head>  
+<body>  
+  
+<div class="container">  
+  <div class="panel panel-default">  
+    <div class="panel-heading"> Add More Field using the Bootstrap and Jquery </div>  
+    <div class="panel-body">  
+  
+        <form action="action.php" >  
+  
+        <div class="input-group control-group after-add-more">  
+          <input type="text" name="addmore[]" class="form-control" placeholder="Enter Name Here">  
+          <div class="input-group-btn">   
+            <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>  
+          </div>  
+        </div>  
+  
+        </form>  
+  
+        <!-- Copy Fields -->  
+        <div class="copy hide">  
+          <div class="control-group input-group" style="margin-top:10px">  
+            <input type="text" name="addmore[]" class="form-control" placeholder="Enter Name Here">  
+            <div class="input-group-btn">   
+              <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>  
+            </div>  
+          </div>  
+        </div>  
+  
+    </div>  
+  </div>  
+</div>  
+  
+<script type="text/javascript">  
+  
+    $(document).ready(function() {  
+  
+      $(".add-more").click(function(){   
+          var html = $(".copy").html();  
+          $(".after-add-more").after(html);  
+      });  
+  
+      $("body").on("click",".remove",function(){   
+          $(this).parents(".control-group").remove();  
+      });  
+  
+    });  
+  
+</script>  
+  
+</body>  
+</html>  
